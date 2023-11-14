@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food restorent</title>
+    <!-- <link rel="stylesheet" href="/css_code/phone.css"> -->
+    <!-- <link rel="stylesheet" href="/css_code/responsive.css" media="screen and (max-width:1136px)"> -->
+    <!-- <link rel="stylesheet" href="/css_code/foodder.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"languages":["en","hi"],"wrapper_selector":".gtranslate_wrapper","horizontal_position":"right","vertical_position":"top"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Libre+Baskerville:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+         :root {
+            --navbar-height: 50px;
+        }
+
+        #navbar {
+            display: flex;
+            background-color: rgba(153, 154, 154, 40%);
+            align-items: center;
+            background-color: none;
+            position: relative;
+            /* opacity: 0.5; */
+        }
+
+        #navimg {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border-radius: 50px;
+        }
+
+        .logo {
+            margin: 5px;
+        }
+
+        #navbar ul {
+            display: flex;
+            list-style: none;
+            /* background-color: lightpink; */
+        }
+
+        #navbar::before {
+            content: "";
+            background: url(/imgs/vegetarian.jpg) no-repeat center/cover;
+            position: absolute;
+            height: 585px;
+            width: 100%;
+            z-index: -1;
+            /* opacity: 0.7; */
+            /* opacity: 0.5; */
+        }
+
+        #navbar ul li {
+            /* padding: 10px; */
+            font-size: 1.3rem;
+        }
+
+        #navbar ul li a {
+            display: block;
+            padding: 2px 20px;
+            text-decoration: none;
+            color: white;
+            /* background-attachment: fixed; */
+            /* border: 3px solid red; */
+            border-radius: 20px;
+        }
+
+        #navbar ul li a:hover {
+            display: block;
+            padding: 2px 20px;
+            text-decoration: none;
+            color: rgb(226, 21, 21);
+            /* border: 3px solid red; */
+            border-radius: 20px;
+            background-color: white;
+        }
+
+        #navbar ul li a:active {
+            display: block;
+            padding: 1px 10px;
+            text-decoration: none;
+            color: rgb(10, 15, 13);
+            /* border: 3px solid red; */
+            border-radius: 20px;
+            background-color: rgb(180, 248, 184);
+        }
+
+        #home {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3px 200px;
+            height: 476px;
+            color: white;
+        }
+        /* #home::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.7;
+} */
+
+        #home h1 {
+            color: red;
+            font-size: 2rem;
+            padding: 0px 0px 20px;
+            text-align: center;
+        }
+
+        #home p {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .btn {
+            padding: 5px;
+            border-radius: 20px;
+            color: white;
+            background-color: yellowgreen;
+            margin: 20px auto;
+            font-size: 23px;
+            cursor: pointer;
+            display: block;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .services_cont1 {
+            border: 0px solid red;
+        }
+
+        .services {
+            margin: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            /* flex-direction: row-reverse; */
+        }
+
+        .services .box {
+            border: 2px solid rgb(255, 160, 0, 50%);
+            margin: 40px;
+            display: block;
+            height: 370px;
+            width: 300px;
+            padding: 10px;
+            box-shadow: 15px 15px 12px grey;
+            border-radius: 30px;
+            background-color: rgb(188, 188, 188, 40%);
+            transition: width 2s, height 2s;
+        }
+
+        .services .box:hover {
+            background-color: #7470704f;
+            /* width: 330px; */
+            height: auto;
+            transition: width 1s, height 5s;
+        }
+
+        .services .box img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            /* height: 70%; */
+            width: 100%;
+            border-radius: 0px;
+            margin: auto;
+        }
+
+        .services .box p {
+            font-family: 'Acme', sans-serif;
+            text-align: center;
+            justify-content: center;
+            /* display: inline; */
+            /* position:; */
+            font-size: 10px;
+        }
+
+        .services .box p:hover {
+            font-size: 20px;
+        }
+
+        .h-primary {
+            font-size: 3rem;
+            padding: 10px;
+            font-family: 'Acme', sans-serif;
+            background-color: rgb(255, 228, 196, 40%);
+            color: rgb(252, 152, 4);
+        }
+
+        .h-secondry {
+            font-size: 2rem;
+            font-family: 'Acme', sans-serif;
+            padding: 10px;
+        }
+
+        .clients-section {
+            height: 200px;
+        }
+
+        .clients-section::before {
+            content: "";
+            position: absolute;
+            background: url(/imgs/foodbg.jpg);
+            height: 200px;
+            width: 100%;
+            opacity: 15%;
+            z-index: -1;
+        }
+
+        .clients {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .clients-items {
+            padding: 0px 5px;
+        }
+
+        .clients img {
+            height: 100px;
+        }
+
+        .hjhgj {
+            border: 2px solid red;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            /* display: inline-block; */
+        }
+
+        .contect-box {
+            /* border: 2px solid blueviolet; */
+            justify-content: center;
+            background-color: rgb(196, 193, 193, 46%);
+            display: flex;
+            padding: 20px;
+            width: 35%;
+            border: 3px solid gray;
+            border-radius: 15px;
+            margin: 25px auto;
+        }
+
+        .contect-box input {
+            padding: 5px;
+            margin: 5px;
+            width: 100%;
+            font-size: 15px;
+            border-radius: 5px;
+        }
+
+        .contect-box input:focus {
+            padding: 5px;
+            background-color: rgba(248, 248, 212, 0.466);
+            margin: 5px;
+            width: 100%;
+            font-size: 15px;
+            border-radius: 5px;
+        }
+        /* .contect-box form {
+    border: 5 px solid rgb(255, 0, 191);
+    width: 50%;
+    margin: 10 px;
+    padding: 50 px;
+}
+ */
+
+        .contect-box label {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        #create-profile {
+            background-color: rgb(148, 150, 149, 55%);
+            width: 70%;
+            display: block;
+            cursor: pointer;
+            border-radius: 20px;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 25px;
+            margin: 25px auto;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            justify-content: center;
+            height: 35px;
+            display: flex;
+            margin: 2px;
+            background-color: rgba(128, 128, 128, 0.966);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gtranslate_wrapper"></div>
+    <nav id="navbar">
+        <div class="logo">
+            <img src="/imgs/ravi pic.jpg" alt="my food restourant" id="navimg">
+        </div>
+        <ul>
+            <li class="items"> <a href="#">Home</a></li>
+            <li class="items"><a href="#">your order</a></li>
+            <li class="items"><a href="#">catecgery</a></li>
+            <li class="items"><a href="#">about us</a></li>
+            <li class="items"><a href="#" id="profile">profile</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="tital_h">welcome to good job rstaurant </h1>
+        <p>Hello, friends! <br> welcome to my food odering website. here you can get a delicious food. our Home delevery services is excellent.
+            we provide your order to you within 30 min to your exact location.
+        </p>
+        <p>
+        </p>
+        <button class="btn">Oder now</button>
+    </section>
+    <section class="services_cont1">
+        <h1 class="h-primary center">Our services</h1>
+        <div class="services">
+            <div class="box">
+                <img src="/imgs/pizza-New.png" alt="" id="pizza">
+                <h3 class="h-secondry center">Pizza</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam dolore tempora quisquam labore. Quam reprehenderit, at nemo eum dolorem quos et, aspernatur </p>
+                <p class="item_detail center"><pre>Rs: 250/</pre>
+                </p>
+                <button class="btn">Oder now</button>
+            </div>
+            <div class="box">
+                <img src="/imgs/cake-new.png" alt="">
+                <h3 class="h-secondry center">Cake</h3>
+                <p class="item_detail center">Lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. A cumque porro illo? Libero, dolorum magni ducimus voluptatibus consectetur adipisicing elit. Eum, dolores!
+                </p>
+                <button class="btn">Oder now</button>
+            </div>
+            <div class="box">
+                <img src="/imgs/coffee-bread-new.png" alt="">
+                <h3 class="h-secondry center">Coffee-bread</h3>
+                <p class="item_detail center ">Lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. A cumque porro illo? Libero, dolorum magni ducimus amet consectetur adipisicing elit. Necessitatibus, error.
+                </p>
+                <button class="btn">Oder now</button>
+            </div>
+            <div class="box">
+                <img src="/imgs/humberger-new.png" alt="">
+                <h3 class="h-secondry center">Burger</h3>
+                <p class="item_detail center ">Lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. A cumque porro illo? Libero, dolorum magni ducimus voluptatibus asperiores eligendi doloremque labore quos a iure quo! dolor sit, amet consectetur adipisicing elit. Necessitatibus,
+                    error.
+                </p>
+                <button class="btn">Oder now</button>
+            </div>
+            <div class="box">
+                <img src="/imgs/tea-new.png" alt="">
+                <h3 class="h-secondry center">Tea</h3>
+                <p class="item_detail center ">Lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. A cumque porro illo? Libero, dolorum magni ducimus voluptatibus asperiores eligendi doloremque labore quos a iure quo! dolor sit, amet consectetur adipisicing elit. Necessitatibus,
+                    error.
+                </p>
+                <button class="btn">Oder now</button>
+            </div>
+        </div>
+    </section>
+    <section class="contect">
+        <h1 class="h-primary center">sign up section</h1>
+        <div class="contect-box">
+            <form action="">
+                <div class="from-group">
+                    <label for="name">Name : </label>
+                    <input type="text" name="name" id="name" placeholder="your name" autocomplete="off">
+                </div>
+                <div class="from-group">
+                    <label for="mobile">Mobile : </label>
+                    <input type="tel" name="mobilenu" id="mobile" placeholder="" autocomplete="off">
+                </div>
+                <div class="from-group">
+                    <label for="email">E-mail </label>
+                    <input type="text" name="email" id="email" placeholder="...@Gmail.com" autocomplete="off">
+                </div>
+                <div class="from-group">
+                    <label for="address">Address : </label>
+                    <input type="text" name="address" id="address">
+                </div>
+                <div class="from-group">
+                    <label for="">New password:</label>
+                    <input type="password" name="password" id="password" autocomplete="off">
+                </div>
+                <div><input type="submit" value="Create profile" id="create-profile">
+                </div>
+            </form>
+        </div>
+
+
+    </section>
+    <section class="clients-section">
+        <h1 class="h-primary center"> Partenership</h1>
+        <div class="clients">
+            <div class="clients-items">
+                <img src="/imgs/foodcom1-new.png" alt="">
+            </div>
+            <div class="clients-items">
+                <img src="/imgs/foodcom2-new.png" alt="">
+            </div>
+            <div class="clients-items">
+                <img src="/imgs/foodcom3-new.png" alt="">
+            </div>
+            <div class="clients-items">
+                <img src="/imgs/foodcom4-new.png" alt="">
+            </div>
+            <div class="clients-items">
+                <img src="/imgs/foodcom5-new.png" alt="">
+            </div>
+            <div class="clients-items">
+                <img src="/imgs/foodcom6-new.png" alt="">
+            </div>
+            <div class="clients-items">
+                <img src="/imgs/foodcom7-new.png" alt="">
+            </div>
+        </div>
+    </section>
+    <hr style=" color: #0f0909;margin:0px 0px 2px 0px ;font-weight: bold;" />
+    <footer class="row">
+        <div>Work Properly in Chrome (Version 83.0.4103.116) or above, Microsoft Edge( Version 83.0.478.61) or above , Internet Explorer 11 or above. Best Resolution: 1366x768 on Chrome, Firefox</div>
+    </footer>
+</body>
+
+</html>

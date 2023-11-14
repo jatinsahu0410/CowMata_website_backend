@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <div style="border: 2px solid red;">
+        <canvas id="practicecanvas" style='border: 2px solid blue;width: 100%; '></canvas>
+    </div>
+    <button id="downloadpdf" class="button">Download</button>
+</body>
+
+<script>
+    const canvas = document.getElementById('practicecanvas')
+    function drawi() {
+        console.log(canvas)
+        if (canvas.getContext) {
+            const ctx = canvas.getContext("2d")
+            const certImage = new Image();
+            certImage.src = 'dummy.png'
+            certImage.onload = () => {
+                console.log(certImage)
+                console.log(certImage.height)
+                canvas.width = certImage.width;
+                canvas.height = certImage.height;
+                let defaultFontsize = canvas.width / 100;
+                console.log(defaultFontsize)
+                ctx.drawImage(certImage, 0, 0, canvas.width, canvas.height)
+                ctx.font = 'bold 60px "Sofia", sans-serif'
+                ctx.textBaseline = "centr";
+                ctx.globalAlpha = 1;
+                ctx.textAlign = 'center';
+                ctx.fillText("Ravi shankar singh", 1050, 820)
+                ctx.font = 'bold 50px serif'
+                ctx.fillText("534343", 780, 1210)
+                ctx.fillText("₹100", 1000, 650)
+            }
+        }
+    }
+
+    window.addEventListener("load", drawi);
+
+    const btn = document.getElementById('downloadpdf')
+    btn.addEventListener('click', () => {
+        var imgData = canvas.toDataURL("image/png", 1.0);
+        var link = document.createElement("a");
+        link.download = "certificate.png";
+        link.href = imgData;
+        link.click();
+        // var pdf = new jsPDF({
+        //     orientation: "landscape",
+        //     unit: "px",
+        //     format: [1560, 1056]
+        // });
+        // pdf.addImage(canvas.toDataURL("image/jpeg"), 'jpeg', 0, 0);
+        // pdf.save("download.pdf");
+    }) 
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.3/xlsx.full.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.1.0/jszip-utils.min.js"></script> -->
+
+</html>
